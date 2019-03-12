@@ -25,7 +25,6 @@ from bookshelf import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('bookshelf/', include('bookshelf.urls')), # Use include() to add paths from the bookshelf application 
     path('', views.index), #Add URL maps to redirect the base URL to our application
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) # Use static() to add url mapping to serve static files during development (only)
 
