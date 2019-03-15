@@ -3,6 +3,11 @@ from .models import Book, Author
 
 # Register your models here.
 
-admin.site.register(Book)
-admin.site.register(Author)
+@admin.register(Book)
+class BookAdmin(admin.ModelAdmin):
+    pass
+
+@admin.register(Author)
+class AuthorAdmin(admin.ModelAdmin):
+    pass
 

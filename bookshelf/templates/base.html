@@ -1,5 +1,11 @@
 {% load staticfiles %}
 <!DOCTYPE html>
-<html>
-<h2> This is my template </h2>
+<html lang="eng">
+<head>
+    {%block title%}<title>Freeshelf</title>{% endblock %}
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{% static "css/tachyons.css" %}">
+     <link rel="stylesheet" href="{% static "css/style.css" %}">
+     {% block meta%}{%endblock%}
+</head>
 </html>

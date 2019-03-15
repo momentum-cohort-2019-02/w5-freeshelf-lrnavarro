@@ -18,15 +18,13 @@ from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import include
-from django.views.generic import RedirectView
-from bookshelf import views
-
+# from django.views.generic import RedirectView
+# from bookshelf import views
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index), #Add URL maps to redirect the base URL to our application
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) # Use static() to add url mapping to serve static files during development (only)
+    path('', include('bookshelf.urls')), #Redirects everything that comes to root url to bookshelf.urls
 
-
-
+] 
+# + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) # Use static() to add url mapping to serve static files during development (only)
