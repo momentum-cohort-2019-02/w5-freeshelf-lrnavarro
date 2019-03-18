@@ -4,11 +4,12 @@ from bookshelf.models import Book, Author
 
 # Create your views here.
 def index(request):
-    return render(request, 'index.html')
+    books = Book.objects.all()
 
-#     with open('Lis of Books2') as file:
-#         book_list = [line.split() for line in file]
-#     return elevation_list
+    #respond with index.html inside of templates/bookshelf and send books so they can be used in the index.html
+    response = render(request, 'bookshelf/index.html', {
+        "books": books,
+    })
+    return response
 
-# get_2d_array('elevation_small.txt')
     

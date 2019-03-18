@@ -1,3 +1,21 @@
 {%extends "base.html"%}
 {% comment %} {% load staticfiles %} {% endcomment %}
 {% block content %}
+<h2>Freeshelf</h2>
+
+    {% for book in books %}
+      <div>
+        <h3>{{ book.title }}</h3>
+        {% if book.url %}        
+          <a href="{{ book.url }}">{{ book.url }}</a>
+        {% endif %}
+        <div>        
+            Description: {{ book.description }}
+        </div>
+        
+      </div>
+    
+    {% endfor %}
+
+
+{% endblock %}
